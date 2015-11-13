@@ -15,11 +15,11 @@ class c_registrar_parque extends super_controller {
 			throw_exception("Debe ingresar un municipio");
 		}
 
-		if((($parque->get('municipio'))!=("Medelin"))||(($parque->get('municipio'))!=("La estrella"))||(($parque->get('municipio'))!=("Rio negro"))||(($parque->get('municipio'))!=("Copacabana"))||(($parque->get('municipio'))!=("Guatapé"))){
+		if((($parque->get('municipio'))!=("Medellín"))&&(($parque->get('municipio'))!=("La estrella"))&&(($parque->get('municipio'))!=("Rionegro"))&&(($parque->get('municipio'))!=("Copacabana"))&&(($parque->get('municipio'))!=("Guatapé"))){
 			throw_exception("Municipio inválido");
 		}
 
-		if((($parque->get('nivel'))!=("alto"))||(($parque->get('nivel'))!=("bajo")){
+		if((($parque->get('nivel'))!=("alto"))&&(($parque->get('nivel'))!=("bajo"))){
 			throw_exception("Nivel inválido");
 		}
 

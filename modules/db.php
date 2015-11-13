@@ -145,13 +145,14 @@ class db
 	}
 	
 	//function that returns an array with data from a operation
-	public function select($option,$data)
+public function select($options,$data)
 	{
+
 		$info = array();
-		switch($option['lvl1'])
+		switch($options['lvl1'])
 		{																																																																																																										
 			case "user":
-			switch($option['lvl2'])
+			switch($options['lvl2'])
 			{
 				case "all": 
 					//
@@ -159,6 +160,22 @@ class db
 			}
 			break;
 			
+			case "parque":
+			switch($options['lvl2'])
+			{
+				case "all": 
+					$info=$this->get_data("SELECT * FROM parque;"); break;
+					break;
+
+				case "one":
+					$codigo=mysqli_real_escape_string($this->cn,$data['codigo']);
+					$info=$this->get_data("SELECT * FROM parque WHERE codigo='$codigo';");
+					break;
+
+			}
+			break;
+			
+
 			default: break;
 		}
 		return $info;
