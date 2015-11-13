@@ -103,6 +103,19 @@ class db
 					break;
 			}
 			break;
+
+			case "calificacion":
+			switch($options['lvl2']){
+				case "normal":
+					$this->escape_string($object);
+					$parque=$object->get('parque');
+					$fecha=$object->get('fecha');
+					$valor = $object->get('valor');					
+					$this->do_operation("INSERT INTO calificacion (parque,fecha,valor) VALUES
+						('$parque', '$fecha', '$valor');");
+					break;
+			}
+			break;
 			
 			default: break;
 		}
